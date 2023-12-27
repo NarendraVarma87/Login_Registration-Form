@@ -28,7 +28,7 @@ export default function Login() {
         } else {
           alert('Please enter the correct username and password');
           console.log(res)
-          navigate('/login');
+          navigate('/');
         }
       })
       .catch((error) => {
@@ -40,20 +40,22 @@ export default function Login() {
     <div className='container p-3 m-5' style={{border : '2px solid gray'}}>
     <h1 className="text-center">LogIn to Your Account</h1>
       <form onSubmit={handleSubmit} className='text-center d-inline align-items-center'>
-        <label htmlFor="" className="form-label">Enter UserName : </label>
+        <label htmlFor="" id='userName' className="form-label">Enter UserName : </label>
         <input
           type="text"
           placeholder="UserName"
-          className="form-control "
+          className="form-control"
+          autoComplete='off'
           name="userName"
           value={user.userName}
           onChange={handleChange}
         />
         <br />
-        <label htmlFor="" className="form-label">Enter Password : </label>
+        <label htmlFor="" id='userPassword' className="form-label">Enter Password : </label>
         <input
           type="password"
           className="form-control "
+          autoComplete='off'
           placeholder="UserPassword"
           name="userPassword"
           value={user.userPassword}
